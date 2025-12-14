@@ -1,0 +1,457 @@
+/* style.css - Green & Brown Theme with Promo Banner */
+
+/* 1. Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap');
+
+/* 2. CSS Variables for Theming */
+:root {
+    --primary-color: #3a5a40; /* Deep Forest Green */
+    --secondary-color: #588157; /* Lighter Forest Green */
+    --accent-color: #6f4e37; /* Warm Brown (like coffee/soil) */
+    --accent-hover-color: #4a2c17; /* Darker Brown for hover */
+    --light-bg-color: #f8f9fa;
+    --dark-bg-color: #212529;
+    --light-text-color: #e9ecef;
+    --dark-text-color: #343a40;
+    --border-color: #dee2e6;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* 3. Basic Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    background-color: #fff;
+    color: var(--dark-text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* 4. Header & Navigation */
+header {
+    background: linear-gradient(rgba(58, 90, 64, 0.9), rgba(58, 90, 64, 0.9)), url('assets/images/bandung1.jpg') no-repeat center center/cover;
+    color: var(--light-text-color);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.navbar {
+    background-color: rgba(33, 37, 41, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* 5. Promo Banner - BARU */
+.promo-banner {
+    background: linear-gradient(rgba(58, 90, 64, 0.559), rgba(58, 90, 64, 0.495)), url('https://www.nuarthatours.com/wp-content/uploads/2015/12/Private-Trip-Bandung-min.png') no-repeat center center/cover;
+    color: #fff;
+    padding: 5rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-banner h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.promo-banner p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.promo-banner .btn {
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.promo-banner .btn:hover {
+    background-color: var(--accent-hover-color);
+    transform: scale(1.05);
+}
+
+/* 6. Main Content & Sections */
+.section {
+    padding: 4rem 0;
+}
+
+.section-light {
+    background-color: var(--light-bg-color);
+}
+
+.section-dark {
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+/* 7. Package Cards */
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.package-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.package-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.package-card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card-content h3 {
+    font-size: 1.5rem;
+    color: var(--dark-bg-color);
+}
+
+.package-card-content .price {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.package-card-content p {
+    flex-grow: 1;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover-color);
+    transform: scale(1.05);
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-left: 10px; /* Beri jarak dari tombol utama */
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* 8. Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(88, 129, 87, 0.2);
+}
+
+.form-group input[readonly] {
+    background-color: var(--light-bg-color);
+    cursor: not-allowed;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+}
+
+/* 9. Tables */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: var(--light-bg-color);
+}
+
+tbody tr:hover {
+    background-color: #e2e6ea;
+}
+
+.actions a {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.actions a:first-child {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.actions a.delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* 10. Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--dark-bg-color);
+    color: var(--light-text-color);
+    flex-shrink: 0;
+}
+
+/* 11. Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    .navbar a {
+        margin: 0.25rem 0;
+    }
+
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.video-gallery-section {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+.video-gallery-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.video-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.video-gallery-item {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Rasio aspek 16:9 */
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+.video-gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.video-gallery-item:hover img {
+    opacity: 0.8;
+}
+
+.video-gallery-item .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(111, 78, 55, 0.8); /* Warna aksen cokelat dengan transparansi */
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.video-gallery-item:hover .play-button {
+    background-color: var(--accent-color);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-gallery-item .play-button::before {
+    content: '';
+    border-style: solid;
+    border-width: 15px 0 15px 26px;
+    border-color: transparent transparent transparent #ffffff; /* Segitiga putih */
+}
+
+.video-gallery-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 15px;
+}
